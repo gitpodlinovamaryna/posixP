@@ -9,8 +9,12 @@ echo $BACKUP_DIR_PATH
     if [ ! -d "$BACKUP_DIR_PATH" ];
         then mkdir $BACKUP_DIR_PATH
         fi
-        cd ${HOME}
-        cd Documents
-        cd $BACKUP_DIR_NAME
+        cp -R $1 $BACKUP_DIR_PATH/
         ARCHIVE_NAME="${PROJ_NAME}_${NOW_DATE}.tar.gz"
+        cd $BACKUP_DIR_PATH
         tar -cvzf $ARCHIVE_NAME $PROJ_NAME
+        rm -rf $PROJ_NAME
+        
+        
+        
+        
