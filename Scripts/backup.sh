@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+#A script, which creates backups (by archiving) of the PROJ project to the BACKUP_DIR directory, 
+#naming the copy files PROJ_yyyy-mm-dd_hh-mm-cc.tar.gz.
+
 PROJ=$1
 PROJ_NAME=`basename "$1"`
 NOW_DATE=$(date +'%Y-%m-%d-%H-%M-%S')
