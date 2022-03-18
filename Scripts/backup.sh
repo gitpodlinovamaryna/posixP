@@ -11,4 +11,4 @@ echo $BACKUP_DIR_PATH
         fi
         cd $BACKUP_DIR_PATH
         ARCHIVE_NAME="${PROJ_NAME}_${NOW_DATE}.tar.gz"
-        tar -cvzf $ARCHIVE_NAME $1
+        tar -cvzf $ARCHIVE_NAME $PROJ_NAME
