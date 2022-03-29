@@ -1,6 +1,0 @@
-APP_NAME = progC
-        APP_PATH = /Users/marynapodlinovaw/Documents/PosixShellAndUtilities/progC
-        APP_INSTALL_PATH = /Users/marynapodlinovaw/Documents/
-        APP_INSTALL_DIR = progC/
-        APP_ARCHIVE_NAME = progC_2022-03-23-03-59-30.tar.gz
-        APP_ARCHIVE_PATH = /Users/marynapodlinovaw/Documents/PosixShellAndUtilities/project_c/progC_2022-03-23-03-59-30.tar.gz
