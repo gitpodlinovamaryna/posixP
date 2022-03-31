@@ -5,14 +5,16 @@ function fillMySettings(){
     local INSTALL_PATH=$2
     local APP_PATH=$3
     cd $APP_PATH
-    printf "APP_NAME = progC
-        APP_PATH = ${APP_PATH}
-        APP_INSTALL_PATH = ${INSTALL_PATH}
-        APP_ARCHIVE_NAME = ${ARCHIVE_NAME}
+    printf "APP_NAME = progC/n
+        APP_PATH = ${APP_PATH}/n
+        APP_INSTALL_PATH = ${INSTALL_PATH}/n
+        APP_ARCHIVE_NAME = ${ARCHIVE_NAME}/n
         APP_ARCHIVE_PATH = ${ARCHIVE_PATH}" $USER > ${APP_PATH}/.my-settings.txt
 }
 
-
+function readMySettings(){
+    readarray -t arr < $1
+}
 function unpacking(){
     
     local APP_ARCHIVE_PATH=$1
@@ -36,7 +38,7 @@ function install(){
     APP_INSTALL_PATH=$2
     unpacking $APP_ARCHIVE_PATH $APP_INSTALL_PATH
     cd ${APP_INSTALL_PATH}progC
-    gcc -o ./check.txt  main.c
+    gcc -o progC main.c
 }
 
 function reinstall(){
