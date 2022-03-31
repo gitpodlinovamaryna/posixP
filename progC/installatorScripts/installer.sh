@@ -65,20 +65,32 @@ function remove(){
 
 #update_settings
 case "$1" in 
-1)  ARCHIVE_PATH=$2
-    if [ $# -eq 3 ];
-        then
-            install $ARCHIVE_PATH $3
-        else 
-            install $ARCHIVE_PATH ${HOME}/Documents/
+1)  if ! [ -f $2 ]; then
+        echo 'No file'
+    else
+    ARCHIVE_PATH=$2
+        if [ $# -eq 3 ];
+            then
+                install $ARCHIVE_PATH $3
+            else 
+                install $ARCHIVE_PATH ${HOME}/Documents/
+            fi
+        fi
+    ;;
+2)  if ! [ -d $2 ]; then
+    echo 'No directory'
+    else
+        PROJECT_PATH=$2
+        remove $PROJECT_PATH
     fi
     ;;
-2)  PROJECT_PATH=$2
-    remove $PROJECT_PATH
-    ;;
-3)  ARCHIVE_PATH=$2
-    PROJECT_PATH=$3
-    reinstall $ARCHIVE_PATH $PROJECT_PATH
+3)  if ! [ -f $2 ]; then
+        echo 'No file'
+    else
+        ARCHIVE_PATH=$2
+        PROJECT_PATH=$3
+        reinstall $ARCHIVE_PATH $PROJECT_PATH
+    fi
     ;;
 4)  exit 0
     ;;
