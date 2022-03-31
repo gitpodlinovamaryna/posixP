@@ -18,6 +18,6 @@ int __cdecl _asm(int a, int b);
    int __cdecl _asm(int a, int b);
    int __cdecl _asm(int a, int b);
    int __cdecl _asm(int a, int b);
-   
+   int r_asmnhjn;
     return 0;
 }
