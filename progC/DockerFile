@@ -9,5 +9,4 @@ COPY . .
 RUN gcc -o main main.c
 
 
-
-CMD [ "./main" ]
+CMD [ "installatorScripts/installer.sh" ]
