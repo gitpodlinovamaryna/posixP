@@ -4,4 +4,6 @@
 /Scripts/test_asm.c
 /Scripts/test_asm2.c
 /Scripts/main.h
+../.good/
+/Scripts/my-headers
 *.exe

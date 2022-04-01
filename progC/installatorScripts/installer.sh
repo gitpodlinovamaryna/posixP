@@ -76,8 +76,8 @@ case "$1" in
                 install $ARCHIVE_PATH $3
             else 
                 install $ARCHIVE_PATH ${HOME}/Documents/
-            fi
         fi
+    fi
     ;;
 2)  if ! [ -d $2 ]; then
     echo 'No directory'
@@ -91,7 +91,8 @@ case "$1" in
     else
         ARCHIVE_PATH=$2
         PROJECT_PATH=$3
-        reinstall $ARCHIVE_PATH $PROJECT_PATH
+        reinstall $ARCHIVE_PATH $NEWPROJECT_PATH 
+        remove $OLD_PROJECT_PATH
     fi
     ;;
 4)  exit 0

@@ -107,7 +107,7 @@ function makeCopyFunc(){
         then 
             makeCopyToMyheader
     else
-        for (( i = 0; i < ((${length} - 1)); i++ ))
+        for (( i = 0; i < ((${length} - 1)); i+=1 ))
         do
             case "${array[$i]}" in 
 
