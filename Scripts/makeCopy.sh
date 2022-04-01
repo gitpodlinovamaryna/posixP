@@ -6,31 +6,33 @@
 #a) ./makeCopy - run in current folder and copy to myheader folder (default)
 function makeCopyToMyheader(){
     NAME_DIRECTORY="my-headers"
-        for file in *.*
+        if [ ! -d "$NAME_DIRECTORY" ];
+            then mkdir $NAME_DIRECTORY
+        fi
+        CDIR=$(pwd)
+        for i in `ls`
         do
-            if [ -e "$file" ]; 
+            if [ $i != "my-headers" ]
             then
-                if [ ! -d "$NAME_DIRECTORY" ];
-                    then mkdir $NAME_DIRECTORY
-                fi
-            cp *.* $NAME_DIRECTORY
-            break
+                `cp -r $i $CDIR/$NAME_DIRECTORY`
             fi
         done
+    #cp -a /$CDIR/. $NAME_DIRECTORY
 }
 
 #b) ./makeCopy -d dir_name - run in current follder and copy to dir_name folder
 function makeCopyToDirName(){
-    NAME_DIRECTORY=$1
-        for file in *.*
+    PATH_DIRECTORY=$1
+    NAME_DIRECTORY=`basename "$1"`
+    if [ ! -d "$PATH_DIRECTORY" ];
+                    then mkdir $PATH_DIRECTORY
+    fi
+    CDIR=$(pwd)
+        for i in `ls`
         do
-            if [ -e "$file" ]; 
+            if [ $i != "$NAME_DIRECTORY" ]
             then
-                if [ ! -d "$NAME_DIRECTORY" ];
-                    then mkdir $NAME_DIRECTORY
-                fi
-            cp *.* $NAME_DIRECTORY
-            break
+                `cp -r $i $PATH_DIRECTORY`
             fi
         done
 }
@@ -74,6 +76,25 @@ function makeCopyWithConditionToDirName(){
 
 #e) ./makeCopy -l dir_name - run in dir_name folder and copy to myheader folder
 function runInDirNameAndCopyToMyHeader(){
+    RUN_DIR=$1
+    NAME_DIRECTORY="my-headers"
+    if ! [ -d $RUN_DIR ]; then
+        echo 'No directory'
+    else
+        cd $RUN_DIR
+        if [ ! -d "$NAME_DIRECTORY" ];
+            then mkdir $NAME_DIRECTORY
+        fi
+        CDIR=$(pwd)
+        for i in `ls`
+        do
+            if [ $i != "my-headers" ]
+            then
+                `cp -r $i $CDIR/$NAME_DIRECTORY`
+            fi
+        done
+
+    fi
 echo $1
 }
 
