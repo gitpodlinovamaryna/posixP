@@ -21,18 +21,13 @@ function makeCopyToMyheader(){
 
 #b) ./makeCopy -d dir_name - run in current follder and copy to dir_name folder
 function makeCopyToDirName(){
-    NAME_DIRECTORY=$1
-        for file in *.*
-        do
-            if [ -e "$file" ]; 
-            then
-                if [ ! -d "$NAME_DIRECTORY" ];
-                    then mkdir $NAME_DIRECTORY
-                fi
-            cp *.* $NAME_DIRECTORY
-            break
-            fi
-        done
+   if [ ! -d "$1" ];
+        then mkdir $1
+        fi
+
+        # copy folder to BackUps directory:
+        cp -R `pwd` $1
+echo $1
 }
 
 #c) ./makeCopy -e cpp - run in current folder and copy to myheader folder all .cpp files
@@ -70,6 +65,7 @@ function makeCopyWithConditionToDirName(){
     else
         echo "$2 is not an option"
     fi;
+echo $1
 }
 
 #e) ./makeCopy -l dir_name - run in dir_name folder and copy to myheader folder

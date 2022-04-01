@@ -33,6 +33,7 @@ function makeCopyToDirName(){
             break
             fi
         done
+echo $1
 }
 
 #c) ./makeCopy -e cpp - run in current folder and copy to myheader folder all .cpp files
@@ -70,6 +71,7 @@ function makeCopyWithConditionToDirName(){
     else
         echo "$2 is not an option"
     fi;
+echo $1
 }
 
 #e) ./makeCopy -l dir_name - run in dir_name folder and copy to myheader folder
