@@ -1,0 +1,14 @@
+.DS_Store
+/lll
+/Project_c
+/progC/.my-settings.txt
+/Scripts/test_asm.c
+/Scripts/test_asm2.c
+/Scripts/main.h
+../.good/
+/progC/main
+/progC/log.txt
+/Scripts/zzz.txt
+/Scripts/my-headers
+
+*.exe
